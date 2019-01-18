@@ -1,6 +1,11 @@
 import { Applocation, Context } from 'https://deno.land/x/oak/mod.ts'
 
-class Server {
+interface InitService {
+  initMiddle(): void
+  start(): Promise<void>
+}
+
+class Server implements InitService {
   private app = new Applocation()
 
   public initMiddle(): void {
