@@ -1,4 +1,5 @@
-import { Applocation, Context } from 'https://deno.land/x/oak/mod.ts'
+import { Application } from './oak/mod'
+import { Context } from './oak/context'
 
 interface InitService {
   initMiddle(): void
@@ -6,7 +7,7 @@ interface InitService {
 }
 
 class Server implements InitService {
-  private app = new Applocation()
+  private app = new Application()
 
   public initMiddle(): void {
     this.app.use(async (ctx: Context, next) => {
