@@ -7,12 +7,14 @@ OAk, you can be understood as the koa framework in node.js.
 
 # get started
 
-    * build image
+* build image
+    
     ```
     make build
     ```
 
-    * start
+* start
+    
     ```
     make start
     ```
