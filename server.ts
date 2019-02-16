@@ -1,5 +1,4 @@
-import { Application } from './oak/mod'
-import { Context } from './oak/context'
+import { Application, Context } from 'https://deno.land/x/oak/mod.ts'
 
 interface InitService {
   initMiddle(): void
