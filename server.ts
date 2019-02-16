@@ -1,5 +1,5 @@
 import { Application, Context } from 'https://deno.land/x/oak/mod.ts'
-import router from './route/index.ts'
+import router from './router.ts'
 
 interface InitService {
   initMiddle(): void
