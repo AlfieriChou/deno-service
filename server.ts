@@ -1,4 +1,5 @@
 import { Application, Context } from 'https://deno.land/x/oak/mod.ts'
+import router from './route/index.ts'
 
 interface InitService {
   initMiddle(): void
@@ -22,9 +23,8 @@ class Server implements InitService {
       ctx.response.headers.set('X-Response-Time', `${ms}ms`)
     })
 
-    this.app.use((ctx: Context) => {
-      ctx.response.body = 'Hello World!'
-    })
+    this.app.use(router.routes())
+    this.app.use(router.allowedMethods())
   }
 
   public async start(): Promise<void> {
